@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="test copy.css" />
+</head>
+
+<body>
+	<div class="animation-wrapper">
+		<div class="water">
+			<!-- Waves -->
+			<ul class="waves">
+				<li class="wave-one" style="background-image: url('https://i.postimg.cc/7LtCC11Y/wave1.png');"></li>
+				<li class="wave-two" style="background-image: url('https://i.postimg.cc/P5hv05rh/wave2.png');"></li>
+				<li class="wave-three" style="background-image: url('https://i.postimg.cc/63Dyc91k/wave3.png');"></li>
+				<li class="wave-four" style="background-image: url('https://i.postimg.cc/1tg8DgM0/wave4.png');"></li>
+			</ul>
+		</div>
+
+		<div class="cloud" style="background-image: url('https://i.postimg.cc/VNkrLZCV/cloud-md.png');
+        "></div>
+		<div class="cloud2" style="background-image: url('https://i.postimg.cc/VNkrLZCV/cloud-md.png');
+        "></div>
+
+		<div class="iceberg-container">
+			<div class="iceberg" onclick="showInfo(1)">
+				<img src="iceberg.png" alt="iceberg" />
+			</div>
+			<div class="iceberg" onclick="showInfo(2)">
+				<img src="iceberg.png" alt="iceberg" />
+			</div>
+			<div class="iceberg" onclick="showInfo(3)">
+				<img class="mainiceberg" src="iceberg.png" alt="iceberg" />
+			</div>
+			<div class="iceberg" onclick="showInfo(4)">
+				<img src="iceberg.png" alt="iceberg" />
+			</div>
+			<div class="iceberg" onclick="showInfo(5)">
+				<img src="iceberg.png" alt="iceberg" />
+			</div>
+		</div>
+
+		<div id="info-box-1" class="info-box hidden">
+			<p class="iceberg-name">My credit page so amazing</p>
+			<p>ROUINA ID JMOUD Soukaina - jrsocay@gmail.com</p>
+			<p>SELVANATHAN Shankavi - shankavi.selvanathan@gmail.com</p>
+		</div>
+		<div id="info-box-2" class="info-box hidden">
+			<p class="iceberg-name">Ymoji - Shigetaka Kurita n’a qu’à bien se tenir ! </p>
+			<p>KHAMIS Yannick - yk.105m@gmail.com</p>
+			<p>PHAM Xuan Hoang - hoangphamat0407@gmail.com</p>
+			<p>DAO Viet Long- daovietlong10@gmail.com</p>
+			<a href="https://github.com/K-Yann-K/nuit_de_l-info" class="standout-link">Notre depôt</a>
+		</div>
+		<div id="info-box-3" class="info-box hidden">
+			<p class="iceberg-name">Gaïa</p>
+			<p>DAO Viet Long - daovietlong10@gmail.com</p>
+			<p>DONNELLY Odhran - odhrandonnelly06@gmail.com</p>
+			<p>GNANAPRAGASAM Royston - royston0912@gmail.com</p>
+			<p>Guerel Stanislas - stanislasguerel75@gmail.com</p>
+			<p>HADJ AMOR Razi - razi.hadjamor@edu.univ-paris13.fr</p>
+			<p>KESSAVANE Dhanoush - kessavanedhanoush@gmail.com</p>
+			<p>Khamis Yannick - yk.105m@gmail.com</p>
+			<p>MARIE Lucas - lucasmariepro1@gmail.com</p>
+			<p>PHAM Xuan Hoang - hoangphamat0407@gmail.com</p>
+			<p>ROUINA ID JMOUD- Soukaina    jrsocay@gmail.com</p>
+			<p>Samake Marie - Smarie.samake@gmail.com</p>
+			<p>SELVANATHAN Shankavi - shankavi.selvanathan@gmail.com</p></p>
+		</div>
+		<div id="info-box-4" class="info-box hidden">
+			<p class="iceberg-name">Cookie Cauchemar</p>
+			<p>KESSAVANE Dhanoush - kessavanedhanoush@gmail.com</p>
+			<p>GNANAPRAGASAM Royston - royston0912@gmail.com</p>
+			<a href="https://cookie-cauchemar.onrender.com/" class="standout-link">Notre depôt</a>
+		</div>
+		<div id="info-box-5" class="info-box hidden">
+			<p class="iceberg-name">Ubisoft Bordeaux : Mashup Gaming</p>
+			<p>HADJ AMOR Razi - razi.hadjamor@edu.univ-paris13.fr</p>
+			<p>DANTON Emmanuel - defdanton41@gmail.com</p>
+			<div style="text-align: center;">
+				<img src="Save_Gaia.jpg" alt="Ubisoft" width="400" height="300">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function showInfo(icebergNumber) {
+			// Hide all other info boxes
+			const allInfoBoxes = document.querySelectorAll(".info-box");
+			allInfoBoxes.forEach((box) => box.classList.remove("visible"));
+
+			// Find the corresponding info box
+			const infoBox = document.getElementById(`info-box-${icebergNumber}`);
+			if (infoBox) {
+				infoBox.classList.add("visible");
+			}
+
+			// Find the iceberg and add the move-up class
+			const iceberg = document.querySelector(
+				`.iceberg-container .iceberg:nth-child(${icebergNumber})`
+			);
+			if (iceberg) {
+				iceberg.classList.add("move-up");
+
+				// Optional: Remove the move-up animation after a timeout
+				setTimeout(() => {
+					iceberg.classList.remove("move-up");
+					infoBox.classList.remove("visible")
+				}, 3000); // Adjust time as needed
+			}
+		}
+	</script>
+</body>
+
+</html>

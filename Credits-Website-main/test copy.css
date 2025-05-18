@@ -1,0 +1,242 @@
+body{
+	font-family: 'arial';
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	overflow-y: hidden;
+
+}
+
+.animation-wrapper{
+	background: #ace5ee;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.water{
+    bottom: 0;
+    left: 0;
+	position: absolute;
+    width: 100%;
+}
+
+.water ul.waves{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.water ul.waves li{
+	background-repeat: repeat-x;
+}
+
+.water ul.waves li.wave-one{
+	animation: wave 8.7s linear infinite;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	bottom: 0px;
+	height: 50px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 10;
+}
+
+.water ul.waves li.wave-two{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 10s linear infinite;
+	bottom: 0px;
+	height: 84px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+}
+
+.water ul.waves li.wave-three{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 25s linear infinite;
+	bottom: 0;
+	height: 190px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 8;
+}
+
+.water ul.waves li.wave-four{
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation: wave 25s linear infinite;
+	bottom: 0;
+	height: 205px;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.cloud{
+	animation: cloud 30s linear infinite;
+	background-repeat: no-repeat;
+    height: 165px;
+    left: 0;
+    position: absolute;
+    width: 297px
+}
+
+.cloud2{
+	animation: cloud 25s linear infinite;
+	background-repeat: no-repeat;
+    bottom: 320px;
+    height: 165px;
+    left: 140px;
+    position: absolute;
+    width: 297px;
+}
+
+img {
+	width: 200px;
+}
+
+.mainiceberg {
+	margin-top: 40px;
+	width: 380px;
+}
+
+.info-box {
+    position: fixed; /* Position relative to the viewport */
+    top: 50%; /* Move the box to the middle vertically */
+    left: 50%; /* Move the box to the middle horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional styling for background */
+    padding: 20px; /* Add some padding for better visuals */
+    border-radius: 8px; /* Smooth corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    display: none; /* Initially hide the pop-up */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+.hidden {
+    display: none;
+}
+
+.info-box.visible {
+	opacity: 1;
+	visibility: visible;
+    display: block;
+    position: absolute; /* Adjust positioning */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional styling */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Iceberg move-up animation */
+.iceberg.move-up img {
+    transform: translateY(-200px);
+    transition: transform 0.5s ease;
+}
+.iceberg-container {
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-around; /* Add space between icebergs */
+    align-items: center; /* Center items vertically */
+}
+
+/* Style each iceberg */
+.iceberg {
+	margin-top: 240px;
+    position: relative; /* Allow animations to work correctly */
+    cursor: pointer; /* Indicate interactivity */
+    transition: transform 0.5s ease; /* Smooth movement animation */
+}
+
+.iceberg-name {
+    position: absolute;
+    top: -20px; /* Position above the iceberg image */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a background for better readability */
+    padding: 5px 10px;
+    border-radius: 5px; /* Smooth edges */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold;
+    color: #000;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.standout-link {
+    display: inline-block; /* Makes it easier to add padding and hover effects */
+    color: white; /* Text color */
+    background-color: #007bff; /* Bright blue background */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes the text bold */
+    padding: 10px 20px; /* Adds padding around the text */
+    border-radius: 8px; /* Rounds the corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover effects */
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* Hover effect */
+.standout-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure text color remains white */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+    transform: translateY(-2px); /* Slightly "lift" the link */
+}
+
+/* Optional: Active effect */
+.standout-link:active {
+    transform: translateY(0); /* Remove lift on click */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/*Animation Keyframe Section*/
+
+@keyframes wave{
+    0% {
+        background-position: 0 0;
+	}
+
+    100% {
+        background-position: 1920px 0;
+    }
+}
+
+@keyframes boat{
+	0%{
+		transform: rotate(0);
+	}
+
+	50%{
+		transform: rotate(-3deg);
+	}
+
+	100%{
+		transform: rotate(0);
+	}
+}
+
+@keyframes cloud{
+	0%{
+		left: -30%;
+	}
+
+	100%{
+		left: 100%;
+	}
+}
+
